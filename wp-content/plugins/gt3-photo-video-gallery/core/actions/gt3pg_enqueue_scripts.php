@@ -43,6 +43,7 @@ add_action('enqueue_block_editor_assets', function(){
 			'blocks'   => array_map('strtolower', $settings->getBlocks()),
 			'plugins'  => Assets::instance()->getPlugins(),
 			'_watermark_nonce' => wp_create_nonce('process_watermarks'),
+			'_nonce'   => wp_create_nonce('gallery_settings'),
 		)
 	);
 
@@ -83,7 +84,6 @@ add_action('wp_enqueue_scripts', 'gt3pg_wp_enqueue_scripts');
 
 function gt3pg_wp_enqueue_scripts(){
 	wp_register_script('blueimp-gallery.js', GT3PG_PLUGINROOTURL.'/dist/js/deprecated/frontend.js', array( 'jquery', 'imagesloaded' ), filemtime(GT3PG_PLUGINPATH.'/dist/js/deprecated/frontend.js'), true);
-	wp_register_script('isotope', GT3PG_JSURL.'isotope.pkgd.min.js', array( 'jquery' ), '3.0.4', true);
 
 	wp_register_style('blueimp-gallery.css', GT3PG_PLUGINROOTURL.'/dist/css/deprecated/frontend.css', null, filemtime(GT3PG_PLUGINPATH.'/dist/css/deprecated/frontend.css'));
 

@@ -229,7 +229,7 @@ function gt3pg_gallery_shortcode($attr){
 		);
 
 		if($atts['thumb_type'] == 'masonry') {
-			wp_enqueue_script('isotope');
+			wp_enqueue_script('gt3pg_pro--isotope');
 		}
 
 		$gallery_class = apply_filters('gt3pg_gallery_class', $gallery_class, $atts, $instance, $selector);

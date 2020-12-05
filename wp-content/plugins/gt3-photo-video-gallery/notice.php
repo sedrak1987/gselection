@@ -20,7 +20,7 @@ class GT3_Notice {
 			'msg'    => '10,000+ Active installations of <a href="https://wordpress.org/plugins/gt3-photo-video-gallery/" target="_blank">GT3 Photo & Video Gallery</a>. Thank you for being a part of GT3themes ❤<br/>
 We’re so glad you\'ve chosen our plugin among others.<br/>
 <br/>
-Need Pro version? <span style="color: red;">Save 50% OFF</span> -&gt; <a href="http://bit.ly/2BwslYG" target="_blank">View Pro Version</a>',
+Need Pro version? <span style="color: red;">Save 50% OFF</span> -&gt; <a href="https://gt3themes.com/gt3-photo-video-gallery-pro-is-live-now/" target="_blank">View Pro Version</a>',
 		),
 	);
 
@@ -53,7 +53,7 @@ Need Pro version? <span style="color: red;">Save 50% OFF</span> -&gt; <a href="h
 	}
 
 	function ajax_handler(){
-		if(!isset($_POST['gt3_action'])) {
+		if(!current_user_can('manage_options') || !isset($_POST['gt3_action']) || !key_exists('_nonce', $_POST) || wp_verify_nonce($_POST['_nonce'], 'gt3_notice')) {
 			wp_die(0);
 		}
 		$action = $_POST['gt3_action'];
@@ -94,7 +94,7 @@ Need Pro version? <span style="color: red;">Save 50% OFF</span> -&gt; <a href="h
 
 
 	function pro_version(){
-		$msg   = 'The <b>Pro version</b> of GT3 Photo & Video Gallery is now available. <span style="color: red;">Save 50% OFF</span> -&gt; <a href="http://bit.ly/2BwslYG" target="_blank">View Pro Version</a>';
+		$msg   = 'The <b>Pro version</b> of GT3 Photo & Video Gallery is now available. <span style="color: red;">Save 50% OFF</span> -&gt; <a href="https://gt3themes.com/gt3-photo-video-gallery-pro-is-live-now/" target="_blank">View Pro Version</a>';
 		$class = 'notice notice-warning gt3pg_error_notice is-dismissible gt3pg_50_off_info';
 		echo '<div class="'.$class.'"><p>'.$msg.'</p></div>';
 		?>
@@ -109,7 +109,8 @@ Need Pro version? <span style="color: red;">Save 50% OFF</span> -&gt; <a href="h
 							method: "POST",
 							data: {
 								action: "gt3pg_disable_notice",
-								gt3_action: "disable_50_off"
+								gt3_action: "disable_50_off",
+								_nonce: <?php echo wp_create_nonce('gt3_notice'); ?>,
 							}
 						})
 					})
@@ -158,7 +159,8 @@ Need Pro version? <span style="color: red;">Save 50% OFF</span> -&gt; <a href="h
 							method: "POST",
 							data: {
 								action: "gt3pg_disable_notice",
-								gt3_action: "<?php echo $name?>"
+								gt3_action: "<?php echo $name?>",
+								_nonce: <?php echo wp_create_nonce('gt3_notice'); ?>,
 							}
 						})
 					})

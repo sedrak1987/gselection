@@ -1,0 +1,81 @@
+2020-12-05T02:00:51+00:00 CRITICAL Uncaught Error: Class 'gt3pg_pro_plugin_updater' not found in /var/www/html/wp-content/plugins/gt3-photo-video-gallery-pro/plugin.php:431
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(287): gt3_photo_video_galery_pro->cron_callback()
+#1 /var/www/html/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#2 /var/www/html/wp-includes/plugin.php(544): WP_Hook->do_action()
+#3 /var/www/html/wp-cron.php(138): do_action_ref_array()
+#4 {main}
+  thrown in /var/www/html/wp-content/plugins/gt3-photo-video-gallery-pro/plugin.php on line 431
+
+2020-12-05T03:12:52+00:00 CRITICAL Uncaught Error: Class 'gt3pg_pro_plugin_updater' not found in /var/www/html/wp-content/plugins/gt3-photo-video-gallery-pro/plugin.php:431
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(287): gt3_photo_video_galery_pro->cron_callback()
+#1 /var/www/html/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#2 /var/www/html/wp-includes/plugin.php(544): WP_Hook->do_action()
+#3 /var/www/html/wp-cron.php(138): do_action_ref_array()
+#4 {main}
+  thrown in /var/www/html/wp-content/plugins/gt3-photo-video-gallery-pro/plugin.php on line 431
+
+2020-12-05T05:49:22+00:00 CRITICAL Uncaught Error: Class 'gt3pg_pro_plugin_updater' not found in /var/www/html/wp-content/plugins/gt3-photo-video-gallery-pro/plugin.php:431
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(287): gt3_photo_video_galery_pro->cron_callback()
+#1 /var/www/html/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#2 /var/www/html/wp-includes/plugin.php(544): WP_Hook->do_action()
+#3 /var/www/html/wp-cron.php(138): do_action_ref_array()
+#4 {main}
+  thrown in /var/www/html/wp-content/plugins/gt3-photo-video-gallery-pro/plugin.php on line 431
+
+2020-12-05T06:52:00+00:00 CRITICAL Uncaught Error: Class 'gt3pg_pro_plugin_updater' not found in /var/www/html/wp-content/plugins/gt3-photo-video-gallery-pro/plugin.php:431
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(287): gt3_photo_video_galery_pro->cron_callback()
+#1 /var/www/html/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#2 /var/www/html/wp-includes/plugin.php(544): WP_Hook->do_action()
+#3 /var/www/html/wp-cron.php(138): do_action_ref_array()
+#4 {main}
+  thrown in /var/www/html/wp-content/plugins/gt3-photo-video-gallery-pro/plugin.php on line 431
+
+2020-12-05T07:38:59+00:00 CRITICAL Uncaught Error: Class 'gt3pg_pro_plugin_updater' not found in /var/www/html/wp-content/plugins/gt3-photo-video-gallery-pro/plugin.php:431
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(287): gt3_photo_video_galery_pro->cron_callback()
+#1 /var/www/html/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#2 /var/www/html/wp-includes/plugin.php(544): WP_Hook->do_action()
+#3 /var/www/html/wp-cron.php(138): do_action_ref_array()
+#4 {main}
+  thrown in /var/www/html/wp-content/plugins/gt3-photo-video-gallery-pro/plugin.php on line 431
+
+2020-12-05T08:44:06+00:00 CRITICAL Uncaught Error: Class 'gt3pg_pro_plugin_updater' not found in /var/www/html/wp-content/plugins/gt3-photo-video-gallery-pro/plugin.php:431
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(287): gt3_photo_video_galery_pro->cron_callback()
+#1 /var/www/html/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#2 /var/www/html/wp-includes/plugin.php(544): WP_Hook->do_action()
+#3 /var/www/html/wp-cron.php(138): do_action_ref_array()
+#4 {main}
+  thrown in /var/www/html/wp-content/plugins/gt3-photo-video-gallery-pro/plugin.php on line 431
+
+2020-12-05T09:38:47+00:00 CRITICAL Uncaught Error: Class 'gt3pg_pro_plugin_updater' not found in /var/www/html/wp-content/plugins/gt3-photo-video-gallery-pro/plugin.php:431
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(287): gt3_photo_video_galery_pro->cron_callback()
+#1 /var/www/html/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#2 /var/www/html/wp-includes/plugin.php(544): WP_Hook->do_action()
+#3 /var/www/html/wp-cron.php(138): do_action_ref_array()
+#4 {main}
+  thrown in /var/www/html/wp-content/plugins/gt3-photo-video-gallery-pro/plugin.php on line 431
+
+2020-12-05T10:38:39+00:00 CRITICAL Uncaught Error: Class 'gt3pg_pro_plugin_updater' not found in /var/www/html/wp-content/plugins/gt3-photo-video-gallery-pro/plugin.php:431
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(287): gt3_photo_video_galery_pro->cron_callback()
+#1 /var/www/html/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#2 /var/www/html/wp-includes/plugin.php(544): WP_Hook->do_action()
+#3 /var/www/html/wp-cron.php(138): do_action_ref_array()
+#4 {main}
+  thrown in /var/www/html/wp-content/plugins/gt3-photo-video-gallery-pro/plugin.php on line 431
+
+2020-12-05T11:40:49+00:00 CRITICAL Uncaught Error: Class 'gt3pg_pro_plugin_updater' not found in /var/www/html/wp-content/plugins/gt3-photo-video-gallery-pro/plugin.php:431
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(287): gt3_photo_video_galery_pro->cron_callback()
+#1 /var/www/html/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters()
+#2 /var/www/html/wp-includes/plugin.php(544): WP_Hook->do_action()
+#3 /var/www/html/wp-cron.php(138): do_action_ref_array()
+#4 {main}
+  thrown in /var/www/html/wp-content/plugins/gt3-photo-video-gallery-pro/plugin.php on line 431
+

@@ -3,7 +3,7 @@ Contributors: gt3themes
 Tags: gallery, photo gallery, gallery block, image gallery, gutenberg block, wordpress photo gallery plugin, gutenberg gallery block, responsive gallery, image gallery block, instagram gallery, photo album, video gallery
 Requires at least: 5.0
 Tested up to: 5.5
-Stable tag: 2.5.14
+Stable tag: 2.6.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -17,14 +17,14 @@ GT3 Photo Gallery & Video plugin lets you extend the functionality of the defaul
 
 Create an awesome look for your photo galleries with ease. The current version of the GT3 photo & video gallery plugin works with latest versions the Gutenberg blocks editor. You can easily use GT3 Gutenberg blocks to add image and video galleries on your website.
 
-The current plugin version meets all Google Pagespeed requirements and if you check our sample gallery [Gallery Pagespeed Test](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Flivewp.site%2Fwp%2Fmd%2Fgoogle%2Fpagespeed%2F&tab=desktop) you will get 99 score.
+The current plugin version meets all Google Pagespeed requirements and if you check our sample photo gallery [Gallery Pagespeed Test](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Flivewp.site%2Fwp%2Fmd%2Fgoogle%2Fpagespeed%2F&tab=desktop) you will get 99 score.
 
 <h3>How to Add GT3 Photo & Video Gallery Block in Gutenberg</h3>
 In this video you will see how easily you can create gallery using GT3 Gutenberg photo & video gallery blocks.
 
 [youtube https://www.youtube.com/watch?v=f-NW-3lSO0s]
 
-Please note that you can convert Gutenberg gallery block from Grid to Masonry and vice versa.
+Please note that you can convert Gutenberg block gallery from Grid to Masonry and vice versa.
 
 <h3>Elementor Compatibility</h3>
 The lite version is fully compatible with Elementor page builder. It comes with Grid and Masonry photo gallery widgets.
@@ -86,6 +86,7 @@ You can also get a Pro version of this plugin. We offer 50% discount for the fir
 * Elementor page builder photo gallery widgets
 * Absolutely FREE WordPress gallery plugin (Lite Version)
 * Intuitive and easy to use photo & video gallery
+* Extending the native WordPress gallery functionality
 * Gutenberg gallery blocks with custom settings on board
 * Special video settings for each video item
 * If you disable the plugin the default WP gallery still works
@@ -100,7 +101,7 @@ You can also get a Pro version of this plugin. We offer 50% discount for the fir
 * Create classic grid style gallery preview
 * Create cool circle style gallery preview
 * Stylish and responsive image lightbox
-* Image gallery lightbox options
+* Image gallery lightbox custom options
 * Youtube and Vimeo video gallery support
 * Customize the gallery styles with CSS option
 * SEO and high performance optimized
@@ -123,10 +124,9 @@ If the installation does not succeed, please contact us.
 
 == Screenshots ==
 
-1. Gutenberg gallery block settings
-2. GT3 gallery widgets for Elementor
-2. Frontend images preview
-3. Plugin options panel
+1. Plugin settings
+2. Plugin preview on frontend
+3. Plugin settings panel
 
 == Frequently Asked Questions ==
 

@@ -345,6 +345,8 @@ class Assets {
 					'pro' => $this->pro_enabled,
 				),
 				'_watermark_nonce' => wp_create_nonce('process_watermarks'),
+				'_nonce'   => wp_create_nonce('gallery_settings'),
+
 			)
 		);
 		// Styles.

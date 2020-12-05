@@ -26,10 +26,6 @@ class Rest {
 	}
 
 	function rest_api_init(){
-		if(!\is_user_logged_in()) {
-//			return;
-		}
-
 		$namespace = 'gt3/v1';
 
 		register_rest_route($namespace,
@@ -111,6 +107,7 @@ class Rest {
 			if(!is_array($new_options)) {
 				$new_options = array();
 			}
+			array_walk_recursive($new_options,'sanitize_text_field');
 
 			Settings::instance()->setSettings($new_options);
 

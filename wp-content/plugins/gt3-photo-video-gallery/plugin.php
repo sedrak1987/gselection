@@ -4,7 +4,7 @@ if(!defined('ABSPATH')) {
 	exit;
 } // Exit if accessed directly
 
-define('GT3PG_PLUGIN_VERSION', '2.5.14');
+define('GT3PG_PLUGIN_VERSION', '2.6.1');
 define('GT3PG_PLUGINNAME', 'GT3 Photo & Video Gallery');
 define('GT3PG_ADMIN_TITLE', 'GT<span class="digit">3</span> Photo & Video Gallery - Lite');
 define('GT3PG_PLUGINSHORT', 'gt3_photo_gallery');
@@ -104,9 +104,7 @@ if(!function_exists('gt3pg_delete_option')) {
 
 if(!function_exists('gt3pg_update_option')) {
 	function gt3pg_update_option($optionname, $optionvalue){
-		if(update_option("gt3pg_".$optionname, $optionvalue)) {
-			return true;
-		}
+
 	}
 }
 

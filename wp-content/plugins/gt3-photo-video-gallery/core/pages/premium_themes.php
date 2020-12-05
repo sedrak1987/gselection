@@ -2,62 +2,62 @@
 $url    = GT3PG_LITE_IMG_URL.'/thumbs/';
 $themes = array(
 	array(
-		'url'  => 'https://1.envato.market/c/296172/275988/4415?u=https://themeforest.net/item/oni-photography-wordpress-theme-for-elementor/24461452',
+		'url'  => 'https://gt3themes.com/wordpress/oni-photography-wordpress-theme-for-elementor/',
 		'img'  => 'oni.jpg',
 		'name' => 'Oni'
 	),
 	array(
-		'url'  => 'https://1.envato.market/c/296172/275988/4415?u=https://themeforest.net/item/soho-fullscreen-photo-video-wordpress-theme/10020792',
+		'url'  => 'https://gt3themes.com/wordpress/soho-fullscreen-photo-video-wordpress-theme/',
 		'img'  => 'soho.jpg',
 		'name' => 'Soho'
 	),
 	array(
-		'url'  => 'https://1.envato.market/c/296172/275988/4415?u=https://themeforest.net/item/moone-photography-portfolio-wordpress-theme/21690421',
+		'url'  => 'https://gt3themes.com/wordpress/moone-creative-photography-portfolio-wordpress-theme/',
 		'img'  => 'moone.jpg',
 		'name' => 'Moone'
 	),
 	array(
-		'url'  => 'https://1.envato.market/c/296172/275988/4415?u=https://themeforest.net/item/ewebot-seo-and-marketing-agency-wordpress-theme/24776025',
+		'url'  => 'https://gt3themes.com/wordpress/ewebot-seo-marketing-agency-wordpress-theme/',
 		'img'  => 'ewebot.jpg',
 		'name' => 'Ewebot'
 	),
 	array(
-		'url'  => 'https://1.envato.market/c/296172/275988/4415?u=https://themeforest.net/item/odry-photography-portfolio-wordpress-theme/25251979',
+		'url'  => 'https://gt3themes.com/wordpress/odry-photography-portfolio-wordpress-theme/',
 		'img'  => 'odry.jpg',
 		'name' => 'Odry'
 	),
 	array(
-		'url'  => 'https://1.envato.market/c/296172/275988/4415?u=https://themeforest.net/item/juris-law-consulting-services-wordpress-theme/24900705',
+		'url'  => 'https://gt3themes.com/wordpress/juris-law-consulting-services-wordpress-theme/',
 		'img'  => 'juris.jpg',
 		'name' => 'Juris'
 	),
 	array(
-		'url'  => 'https://1.envato.market/c/296172/275988/4415?u=https://themeforest.net/item/qudos-multipurpose-elementor-wordpress-theme/22595558',
+		'url'  => 'https://gt3themes.com/wordpress/qudos-multi-purpose-elementor-wordpress-theme/',
 		'img'  => 'qudos.jpg',
 		'name' => 'Qudos'
 	),
 	array(
-		'url'  => 'https://1.envato.market/c/296172/275988/4415?u=https://themeforest.net/item/listingeasy-directory-wordpress-theme/20882964',
+		'url'  => 'https://gt3themes.com/wordpress/listingeasy-directory-wordpress-theme/',
 		'img'  => 'listingeasy.jpg',
 		'name' => 'Listingeasy'
 	),
 	array(
-		'url'  => 'https://1.envato.market/c/296172/275988/4415?u=https://themeforest.net/item/optima-psychologist-psychology-center-wordpress-theme/21431402',
+		'url'  => 'https://gt3themes.com/wordpress/optima-psychologist-psychology-center-wordpress-theme/',
 		'img'  => 'optima.jpg',
 		'name' => 'Optima'
 	),
 	array(
-		'url'  => 'https://1.envato.market/c/296172/275988/4415?u=https://themeforest.net/item/zohar-business-consulting-elementor-wordpress-theme/23194664',
+		'url'  => 'https://gt3themes.com/wordpress/zohar-business-consulting-elementor-wordpress-theme/',
 		'img'  => 'zohar.jpg',
 		'name' => 'Zohar'
 	),
 	array(
-		'url'  => 'https://1.envato.market/c/296172/275988/4415?u=https://themeforest.net/item/woocommerce-multipurpose-responsive-wordpress-theme-wizestore/19999516',
+		'url'  => 'https://gt3themes.com/wordpress/woocommerce-multi-purpose-responsive-wordpress-theme-wizestore/',
 		'img'  => 'wizestore.jpg',
 		'name' => 'Wizestore'
 	),
 	array(
-		'url'  => 'https://1.envato.market/c/296172/275988/4415?u=https://themeforest.net/item/sunergy-multipurpose-green-energy-and-ecology-wordpress-theme/21865879',
+		'url'  => 'https://gt3themes.com/wordpress/sunergy-multi-purpose-green-energy-and-ecology-wordpress-theme/',
 		'img'  => 'sunergy.jpg',
 		'name' => 'Sunergy'
 	),
@@ -68,10 +68,10 @@ $themes = array(
 	<h2><?php echo esc_html__('Premium WordPress Themes', 'gt3pg_pro') ?></h2>
 	<p><?php echo esc_html__('GT3themes provides high-quality WordPress themes which are easy to use and customize.', 'gt3pg_pro') ?></p>
 	<div class="most_popular_wp_themes_wrap">
-	<?php
+		<?php
 		foreach($themes as $theme) {
 			echo '<div class="wp_themes_item"><a href="'.$theme['url'].'" target="_blank"><img src="'.$url.$theme['img'].'" alt="'.$theme['name'].'" /><span class="purchase_wp_theme">'. esc_html__('View Demo', 'gt3pg_pro') .'</span></a></div>';
 		}
-	?>
+		?>
 	</div>
 </div>

@@ -1,8 +1,6 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit;
 
-	require_once 'GT3_EDD_SL_Plugin_Updater.php';
-	require_once 'gt3pg_updater.php';
 	require_once 'gt3classStd.php';
 	require_once 'gt3_el.php';
 	require_once 'gt3attr.php';

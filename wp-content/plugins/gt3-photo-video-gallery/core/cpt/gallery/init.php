@@ -9,8 +9,8 @@ if(!class_exists('GT3_Post_Type_Gallery')) {
 	trait Settings_Trait {
 
 		private static $settings_option_key = 'gt3_cpt_settings';
-		private $settings_options = array();
-		private $defaultsSettings = array();
+		private        $settings_options    = array();
+		private        $defaultsSettings    = array();
 
 		function load_settings(){
 			$options = get_option(self::$settings_option_key, '');
@@ -49,29 +49,44 @@ if(!class_exists('GT3_Post_Type_Gallery')) {
 		public function ajax_save_settings(){
 			header('Content-Type: application/json');
 
-			if(!is_admin() || !current_user_can('manage_options')) {
-				wp_die(wp_json_encode(array(
-					'saved' => false,
-					'error' => 'Auth failed',
-				)));
+			if(!is_admin() || !current_user_can('manage_options') || (!key_exists('_nonce', $_POST) || !wp_verify_nonce($_POST['_nonce'], 'cpt_gallery_settings'))) {
+				wp_die(
+					wp_json_encode(
+						array(
+							'saved' => false,
+							'error' => 'Auth failed',
+						)
+					)
+				);
 			}
 
-			if (key_exists('reset', $_POST) && true === $_POST['reset']) {
+			if(key_exists('reset', $_POST) && true === $_POST['reset']) {
 				$this->setSettings($this->getDefaultsSettings());
-				wp_die(wp_json_encode(array(
-					'saved'           => true,
-					'resetPermalinks' => true,
-				)));
+				wp_die(
+					wp_json_encode(
+						array(
+							'saved'           => true,
+							'resetPermalinks' => true,
+						)
+					)
+				);
 			}
 
 			if(!key_exists('newSettings', $_POST) || !is_array($_POST['newSettings'])) {
-				wp_die(wp_json_encode(array(
-					'saved' => false,
-					'error' => 'New settings not found',
-				)));
+				wp_die(
+					wp_json_encode(
+						array(
+							'saved' => false,
+							'error' => 'New settings not found',
+						)
+					)
+				);
 			}
 
 			$newSettings = $_POST['newSettings'];
+
+			array_walk_recursive($newSettings,'sanitize_text_field');
+
 
 			$oldSettings  = $this->settings_options;
 			$changed_slug = false;
@@ -83,33 +98,49 @@ if(!class_exists('GT3_Post_Type_Gallery')) {
 			}
 			$this->setSettings($newSettings);
 
-			wp_die(wp_json_encode(array(
-				'saved'           => true,
-				'resetPermalinks' => $changed_slug,
-			)));
+			wp_die(
+				wp_json_encode(
+					array(
+						'saved'           => true,
+						'resetPermalinks' => $changed_slug,
+					)
+				)
+			);
 		}
 
 		public function ajax_reset_permalinks(){
 			header('Content-Type: application/json');
 
-			if(!is_admin() || !current_user_can('manage_options')) {
-				wp_die(wp_json_encode(array(
-					'saved' => false,
-					'error' => 'Auth failed',
-				)));
+			if(!is_admin() || !current_user_can('manage_options') || (!key_exists('_nonce', $_POST) || !wp_verify_nonce($_POST['_nonce'], 'cpt_gallery_settings'))) {
+				wp_die(
+					wp_json_encode(
+						array(
+							'saved' => false,
+							'error' => 'Auth failed',
+						)
+					)
+				);
 			}
 
 			if(!key_exists('flush', $_POST) || true === $_POST['flush']) {
-				wp_die(wp_json_encode(array(
-					'saved' => false,
-				)));
+				wp_die(
+					wp_json_encode(
+						array(
+							'saved' => false,
+						)
+					)
+				);
 			}
 
 			flush_rewrite_rules(true);
 
-			wp_die(wp_json_encode(array(
-				'saved'           => true,
-			)));
+			wp_die(
+				wp_json_encode(
+					array(
+						'saved' => true,
+					)
+				)
+			);
 		}
 
 		function getSettings($module = false){
@@ -166,6 +197,7 @@ if(!class_exists('GT3_Post_Type_Gallery')) {
 									'defaults' => $this->getSettings(),
 									'blocks'   => array_map('strtolower', $settings->getBlocks()),
 									'plugins'  => $assets->getPlugins(),
+									'_nonce'   => wp_create_nonce('cpt_gallery_settings'),
 								)
 							);
 							wp_enqueue_style('gt3pg_cpt-settings', GT3PG_LITE_CSS_URL.'admin/cpt-settings.css');
@@ -230,16 +262,21 @@ if(!class_exists('GT3_Post_Type_Gallery')) {
 
 //			if(\is_user_logged_in() && current_user_can('edit_posts')) {
 			add_action('rest_api_init', array( $this, 'rest_api_init' ));
-			register_block_type('gt3pg-pro/shortcode', array(
-				'attributes'      => array(),
+			register_block_type(
+				'gt3pg-pro/shortcode', array(
+				'attributes' => array(),
 //				'render_callback' => array( $this, 'render_block' ),
-			));
+			)
+			);
 //			}
 
-			add_filter('use_block_editor_for_post_type', function($is_enabled, $post_type) {
+			add_filter(
+				'use_block_editor_for_post_type', function($is_enabled, $post_type){
 				$is_enabled = ($post_type === self::post_type ? true : $is_enabled);
+
 				return $is_enabled;
-			}, 500, 2);
+			}, 500, 2
+			);
 		}
 
 		public function rest_api_init(){
@@ -248,10 +285,11 @@ if(!class_exists('GT3_Post_Type_Gallery')) {
 				'gt3pg-pro/shortcode',
 				array(
 					array(
-						'methods'  => WP_REST_Server::CREATABLE,
-						'permission_callback' => function() {
+						'methods'             => WP_REST_Server::CREATABLE,
+						'permission_callback' => function(){
 							return current_user_can('edit_posts');
-						},	'callback' => array( $this, 'render_shortcode' ),
+						},
+						'callback'            => array( $this, 'render_shortcode' ),
 					)
 				)
 			);
@@ -477,7 +515,7 @@ if(!class_exists('GT3_Post_Type_Gallery')) {
 						return current_user_can('edit_posts');
 					},
 					'sanitize_callback' => function($value){
-						$json = wp_json_encode($value);
+						$json  = wp_json_encode($value);
 						$value = (!json_last_error()) ? $json : $value;
 
 						return $value;
@@ -1008,10 +1046,10 @@ if(!class_exists('GT3_Post_Type_Gallery')) {
 			$gallery = sprintf('GT3\PhotoVideoGallery\Block\%1$s', ucfirst($atts['type']));
 
 			$attributes = get_post_meta($atts['id'], '_cpt_gt3_gallery_attributes', true);
-			if (is_string($attributes) && !empty($attributes)) {
+			if(is_string($attributes) && !empty($attributes)) {
 				try {
 					$_attributes = json_decode($attributes, true);
-					if (json_last_error()) {
+					if(json_last_error()) {
 						$_attributes = array();
 					}
 					$attributes = $_attributes;
@@ -1047,7 +1085,7 @@ if(!class_exists('GT3_Post_Type_Gallery')) {
 
 			if($isREST) {
 				$data = array(
-					'rendered'   => $content,
+					'rendered' => $content,
 //					'attributes' => $attributes,
 //					'settings'   => $settings,
 //					'orig_atts'  => $orig_atts,
@@ -1076,6 +1114,7 @@ if(!class_exists('GT3_Post_Type_Gallery')) {
 
 
 	}
+
 	\GT3_Post_Type_Gallery::instance();
 }
 
